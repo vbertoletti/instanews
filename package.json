@@ -1,0 +1,11 @@
+{
+  "name": "instanews",
+  "version": "1.0.0",
+  "description": "Website using NYT API.",
+  "main": "project.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vanessa Bertoletti",
+  "license": "ISC"
+}
