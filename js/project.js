@@ -13,6 +13,7 @@ $(document).ready(function() {
       throw err;
     });
 
+    console.jog("hello");
 
 
 });
