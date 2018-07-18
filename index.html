@@ -8,14 +8,15 @@
 
   <title>Instanews</title>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet">
+  <link href="./build/css/style.min.css" type="text/css" rel="stylesheet">
+
+
 </head>
 
 <body>
 
   <header>
+    <div class="page-cntr">
     <nav class="main-nav">
 
       <div class="logo-container">
@@ -25,66 +26,28 @@
       <div class="menu-box">
       <label class="label-menu" for="news-select">Choose a section:</label>
 
-      <select class="news-select">
+      <select id="news-select">
         <option value="">Sections...</option>
-        <option value="volvo">National</option>
-        <option value="saab">LALALALA</option>
-        <option value="opel">LALALALA</option>
-        <option value="audi">LALALALA</option>
+        <option value="home">Home</option>
+        <option value="arts">Arts</option>
+        <option value="business">Business</option>
+        <option value="sports">Sports</option>
+        <option value="technology">Technology</option>
+        <option value="fashion">Fashion</option>
       </select>
+
+        <div id="appended-stories"></div>
+
+
     </div>
+
 
     </nav>
   </header>
 
   <section class="news-section">
 
-    <div class="news-cell">
-      <p>AAAA</p>
-    </div>
 
-    <div class="news-cell">
-      <p>bbb</p>
-    </div>
-
-    <div class="news-cell">
-      <p>ccccc</p>
-    </div>
-    <div class="news-cell">
-      <p>ddddd</p>
-    </div>
-
-    <div class="news-cell">
-      <p>eeeee</p>
-    </div>
-
-    <div class="news-cell">
-      <p>hhhhh</p>
-    </div>
-
-    <div class="news-cell">
-      <p>iiiii</p>
-    </div>
-
-    <div class="news-cell">
-      <p>jjjj</p>
-    </div>
-
-    <div class="news-cell">
-      <p>kkkkk</p>
-    </div>
-
-    <div class="news-cell">
-      <p>llllll</p>
-    </div>
-
-    <div class="news-cell">
-      <p>mmmmm</p>
-    </div>
-
-    <div class="news-cell">
-      <p>nnn</p>
-    </div>
 
 
   </section>
@@ -95,6 +58,11 @@
       <p>&copy; Copyright 2016 INSTANEWS<p>
 
   </footer>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./build/js/project.min.js"></script>
 
 
 </body>
