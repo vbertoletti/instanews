@@ -1,17 +1,15 @@
 $(document).ready(function() {
 
 
-  $("#news-select").on("change", function() {
-
-
-    var selectedStory = $("#news-select").val();
-    console.log($("#news-select").val());
-
+  $("#select-option").on("change", function() {
+    var selectedStory = $("#select-option").val();
+    $(".loader").show();
+    $('.page-cntr').addClass('header-changed');
     $(".news-section").empty();
-    
-    
+
     //url for api request
-    var url = "https://api.nytimes.com/svc/topstories/v2/" + selectedStory + ".json";
+    var url =
+      "https://api.nytimes.com/svc/topstories/v2/" + selectedStory + ".json";
     url +=
       "?" +
       $.param({
@@ -24,44 +22,33 @@ $(document).ready(function() {
       method: "GET"
     })
       .done(function(data) {
-        console.log(data.results);
+        var onlyImageResults = data.results
+          .filter(function(result) {
+            return result.multimedia.length;
+          })
+          .slice(0, 12);
 
-        $.each(data.results, function(key, value){
+        $.each(onlyImageResults, function(key, value) {
           var html = "<div class='new-cell'>";
+
           html += "<a target='_blank' href=" + value.url + ">";
+
           html += "<img class='news-img' src=" + value.multimedia[4].url + ">";
-          html += "<p>" + value.abstract + "</p>" + "</a>";
+
+          html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>";
+
           html += "</div>";
 
-
-         $(".news-section").append(html);
-
-
-        }  );
-
-        var resultsArray = data.results;
-        //data just represents the returned object
-
-        //try using .each to loop through the data and check out the array in data called results and append the outpout to your html
+          $(".news-section").append(html);
+        });
       })
-      .fail(function(err) {
-          // console.log(url);
-
+      .fail(function() {
+        alert("Sorry, cannot retrieve data");
       })
-      .always(function(){
-
-        //remove loading gif 
-
-
+      .always(function() {
+        $(".loader").hide();
       });
 
-
-
-
-
-
-
-
-
+      
   }); //#news-select change event
 }); //end of document.ready
