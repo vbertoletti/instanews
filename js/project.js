@@ -1,10 +1,14 @@
 $(document).ready(function() {
-
-
   $("#select-option").on("change", function() {
     var selectedStory = $("#select-option").val();
-    $(".loader").show();
-    $('.page-cntr').addClass('header-changed');
+    var selectedStoryExists = false;
+    if (!selectedStory == "") {
+      selectedStoryExists = true;
+    } else {
+      selectedStoryExists = false;
+    }
+   
+    $(".header-wrapper").addClass("header-changed");
     $(".news-section").empty();
 
     //url for api request
@@ -17,38 +21,47 @@ $(document).ready(function() {
       });
 
     //actual ajax request
-    $.ajax({
-      url: url,
-      method: "GET"
-    })
-      .done(function(data) {
-        var onlyImageResults = data.results
-          .filter(function(result) {
-            return result.multimedia.length;
-          })
-          .slice(0, 12);
 
-        $.each(onlyImageResults, function(key, value) {
-          var html = "<div class='new-cell'>";
+    /**
+     * Check if select option has a value if so run ajax request
+     */
+    if (selectedStoryExists == true) {
+      $(".loader").show();
 
-          html += "<a target='_blank' href=" + value.url + ">";
+      $.ajax({
+        url: url,
+        method: "GET"
+      })
+        .done(function(data) {
+          var onlyImageResults = data.results
+            .filter(function(result) {
+              return result.multimedia.length;
+            })
+            .slice(0, 12);
 
-          html += "<img class='news-img' src=" + value.multimedia[4].url + ">";
+          $.each(onlyImageResults, function(key, value) {
+            var html = "<div class='new-cell'>";
 
-          html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>";
+            html += "<a target='_blank' href=" + value.url + ">";
 
-          html += "</div>";
+            html +=
+              "<img class='news-image' style='background: url(" +
+              value.multimedia[4].url +
+              "); background-size: cover;'>";
 
-          $(".news-section").append(html);
+            html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>";
+
+            html += "</div>";
+
+            $(".news-section").append(html);
+          });
+        })
+        .fail(function() {
+          alert("Sorry, cannot retrieve data");
+        })
+        .always(function() {
+          $(".loader").hide();
         });
-      })
-      .fail(function() {
-        alert("Sorry, cannot retrieve data");
-      })
-      .always(function() {
-        $(".loader").hide();
-      });
-
-      
+    }
   }); //#news-select change event
 }); //end of document.ready
