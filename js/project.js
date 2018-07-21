@@ -40,18 +40,18 @@ $(document).ready(function() {
             .slice(0, 12);
 
           $.each(onlyImageResults, function(key, value) {
-            var html = "<div class='new-cell'>";
+            console.log(key, value)
+            var html = "<a class='new-cell' target='_blank' href=" + value.url + ">";
+            html += "<div class='div-cell' style='background: url(" +
+            value.multimedia[4].url +
+            "); background-size: cover;'>";
 
-            html += "<a target='_blank' href=" + value.url + ">";
 
-            html +=
-              "<img class='news-image' style='background: url(" +
-              value.multimedia[4].url +
-              "); background-size: cover;'>";
-
-            html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>";
+            html += "<p class='abstract'>" + value.abstract + "</p>";
 
             html += "</div>";
+
+            html += "</a>"
 
             $(".news-section").append(html);
           });
