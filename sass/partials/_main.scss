@@ -17,13 +17,15 @@ body {
 .page-cntr {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   min-height: 100vh;
   
 }
 
 .logo-container {
   text-align: center;
+  padding-top: 8rem;
+  padding-bottom: 1rem;
 }
 
 .main-menu {
@@ -31,14 +33,22 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10px;
+
+  .label-menu {
+    font-size: 13px;
+    padding-bottom: 15px;
+  }
   
-
+  #select-option {
+    text-transform: capitalize;
+    width: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  
+  }
+  
 }
-
-#select-option {
-  text-transform: capitalize;
-}
-
 
 .header-changed {
   max-height: 10%;
@@ -48,18 +58,21 @@ body {
   }
 
   .logo {
-    height:130px;
+    height: 9rem;
    
   }
 
-}
+  .main-menu {
+    padding-bottom: 3rem;
+  }
 
-.main-menu {
-  padding-bottom: 10px;
-}
+  .footer-container {
+  
+    p{
+    padding: 15px 0 5px 0;
+    }
+  }  
 
-.label-menu {
-  padding-bottom: 10px;
 }
 
 .loader {
@@ -96,19 +109,15 @@ text-align: justify;
 }
 
 .footer-container {
-  // margin-top: auto;
-}
-
-.footer-container p{
-
+  
+  p{
   position: relative;
   bottom: 0;
   width: 100%;
   text-align: center;
-  margin-bottom: 0px;
   color: $footer-text-color;
-
-  
+  font-size: 14px;
+  }
 } 
 
 
@@ -117,50 +126,104 @@ text-align: justify;
 
 @media screen and (min-width: 600px) {
 
-  .main-menu {
-    padding-top: 30px;
+.header-wrapper {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  padding-right: 7rem;
+  padding-top: 5rem;
+
+  .logo{
+    height: 10rem;
+    padding-right: 1rem;
   }
 
+  .main-menu {
+    padding-top: 5rem;
 
-  .new-cell {
-    width: 50%;
-    
+    .label-menu {
+      font-size: 15px;
+      
+    }
+  }
+
+}
+
+.new-cell {
+  width: 50%;
+  
   }
 
   .header-changed {
-    display: flex;
-    flex-wrap: wrap;
+    padding-top: 0;
+    max-height: 150px;
     justify-content: flex-start;
-    align-content: center;
   
     .logo-container {
-      padding: 30px 100px;
+      padding-left: 5rem;
+      padding-right: 3rem;
     }
   
     .logo {
-      height:80px;
+      height:4.5rem;
      
     }
-  
+
+    .main-menu {
+      padding-bottom: 5rem;
+    
+    }
+
+
   }
 
 }
 
 
 
+
 @media screen and (min-width: 1000px) {
+
+  .header-wrapper {
+    justify-content: flex-start;
+
+    .logo{
+      height: 13rem;
+      padding-right: 5rem;
+      padding-left: 3rem;
+    }
+  }
+
+  .header-changed{
+  
+    .logo-container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .logo {
+      height:4.5rem;
+     
+    }
+
+    }
+
 
   .new-cell {
     width: 25%;
     
   }
 
-  .header-changed{
-  .logo-container {
-    padding-left: 20px;
+
+.footer-container {
+  padding-left: 3rem;
+
+  p{
+  text-align: start;
+  font-size: inherit;
   }
 
-}
-
+} 
 
 }
