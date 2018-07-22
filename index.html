@@ -6,65 +6,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Instanews</title>
+  <title>Instanews - NYT News Reader</title>
 
   <link href="./build/css/style.min.css" type="text/css" rel="stylesheet">
-
-
 </head>
 
 
-  <body>
+<body>
+  <!-- adding div to wrap the page body section -->
   <div class="page-cntr">
 
-  <header class="header-wrapper"> 
+    <header class="header-wrapper">
 
+      <!-- div container for NYT logo -->
       <div class="logo-container">
         <img class="logo" src="images/nyt-logo.svg" alt="new-york-times-logo">
       </div>
 
+      <!-- div container for choosing news subject -->
       <div class="main-menu">
-      <label class="label-menu" for="news-select">Choose a section:</label>
+        <label class="label-menu" for="news-select">Choose a section:</label>
 
-      <select id="select-option">
-        <option value="">Sections...</option>
-        <option value="home">Home</option>
-        <option value="arts">Arts</option>
-        <option value="business">Business</option>
-        <option value="sports">Sports</option>
-        <option value="technology">Technology</option>
-        <option value="fashion">Fashion</option>
-      </select>
-    </div>
-    
-    <img class="loader" src="images/ajax-loader.gif" alt="loader">
+        <select id="select-option">
+          <option value="">sections...</option>
+          <option value="home">home</option>
+          <option value="arts">arts</option>
+          <option value="business">business</option>
+          <option value="sports">sports</option>
+          <option value="technology">technology</option>
+          <option value="fashion">fashion</option>
+        </select>
+      </div>
 
-  </header>
+      <!-- loader gif image -->
+      <img class="loader" src="images/ajax-loader.gif" alt="loader">
 
-    
+    </header>
 
-  <section class="news-section">
-
-      
+    <!-- html entire news section, once news are selected from options menu -->
+    <section class="news-section">
 
       <div id="appended-stories"></div>
 
+    </section>
 
+    <!-- footer section -->
+    <footer class="footer-container">
 
+      <p>&copy; Copyright 2016 INSTANEWS
+        <p>
 
-  </section>
+    </footer>
+  </div>
+  <!-- end of footer and entire page wrapper div -->
 
-
-  <footer class="footer-container">
-
-      <p>&copy; Copyright 2016 INSTANEWS<p>
-
-  </footer>
-</div>
-
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./build/js/project.min.js"></script>
+  <!-- javaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./build/js/project.min.js"></script>
 
 
 </body>

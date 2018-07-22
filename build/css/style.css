@@ -336,8 +336,10 @@ template {
           box-sizing: border-box; }
 
 body {
-  background-color: black;
+  background-color: #000000;
   color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
   min-height: 100vh; }
 
 .page-cntr {
@@ -348,10 +350,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  min-height: 100vh; }
 
 .logo-container {
   text-align: center; }
@@ -369,6 +371,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+
+#select-option {
+  text-transform: capitalize; }
 
 .header-changed {
   max-height: 10%; }
@@ -420,7 +425,8 @@ body {
   bottom: 0;
   width: 100%;
   text-align: center;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  color: #c2c2c2; }
 
 @media screen and (min-width: 600px) {
   .main-menu {
