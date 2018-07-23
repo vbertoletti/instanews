@@ -1,8 +1,7 @@
 $(document).ready(function() {
   //doc ready begins
 
-  // $(function() {
-  //   $("#select-option").selectric();
+  $("#select-option").selectric();
 
 
   $("#select-option").on("change", function() {
@@ -18,6 +17,7 @@ $(document).ready(function() {
 
     //adding new class to style header layout once option is selected.
     $(".header-wrapper").addClass("header-changed");
+    $(".footer-container").addClass("footer-changed");
     $(".news-section").empty();
 
     //url for api request
@@ -48,13 +48,12 @@ $(document).ready(function() {
 
           //run .each function appending required information
           $.each(onlyImageResults, function(key, value) {
-            console.log(key, value);
             var html =
               "<a class='new-cell' target='_blank' href=" + value.url + ">";
             html +=
               "<div class='div-cell' style='background: url(" +
               value.multimedia[4].url +
-              "); background-size: cover;'>";
+              "); background-size: cover; background-position: center;'>";
 
             html += "<p class='abstract'>" + value.abstract + "</p>";
 

@@ -35,13 +35,7 @@ body {
   .label-menu {
     font-size: 13px;
     padding-bottom: 15px;
-  }
-
-  #select-option {
-    text-transform: capitalize;
-    width: 120px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    padding-right: 80px;
   }
 }
 
@@ -53,11 +47,45 @@ body {
   top: 50%;
   bottom: 50%;
   left: 50%;
-
-
 }
 
 .header-wrapper {
+  .selectric .label {
+    color: white;
+  }
+  .selectric {
+    background: #2c3e50;
+    border: 1px solid #fff;
+    text-align: left;
+    width: 200px;
+    text-transform: capitalize;
+
+    .label {
+      font-size: 13px;
+    }
+    .button {
+      background: #2c3e50;
+    }
+  }
+
+  .selectric-items {
+    background: #2c3e50;
+    color: #fff;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  .selectric-items li {
+    color: #ffffff;
+  }
+  .selectric-items li:hover:hover {
+    background: #17212a;
+    color: #dbdbdb;
+  }
+  .selectric-items li.selected {
+    background: #17212a;
+    color: white;
+  }
+
   @include tablet-size {
     display: flex;
     flex-direction: row;
@@ -146,29 +174,6 @@ body {
   flex-wrap: wrap;
 }
 
-.new-cell {
-  position: relative;
-  width: 100%;
-  height: 400px;
-
-
-
-  @include tablet-size {
-    width: 50%;
-  }
-
-  @include desktop-size {
-    width: 25%;
-  }
-}
-
-.div-cell {
-  width: 100%;
-  height: 100%;
-
-  
-}
-
 .abstract {
   z-index: 1;
   position: absolute;
@@ -179,16 +184,42 @@ body {
   color: $general-font-color;
   padding: 10px;
   text-align: justify;
-  opacity: 0;
+  height: 100px;
 
-  p:hover {
-    transition: opacity 1s ease-in-out 1.5s;
-  
+  a:hover {
+    height: 25%;
   }
-
 }
 
+.new-cell {
+  position: relative;
+  width: 100%;
+  height: 400px;
 
+  @include tablet-size {
+    width: 50%;
+  }
+
+  @include desktop-size {
+    width: 25%;
+
+    .abstract {
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      .abstract {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.div-cell {
+  width: 100%;
+  height: 100%;
+}
 
 .footer-container {
   @include desktop-size {
@@ -210,3 +241,7 @@ body {
   }
 }
 
+.footer-changed {
+  height: 100px;
+  padding-top: 30px;
+}
