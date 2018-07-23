@@ -1,5 +1,10 @@
 $(document).ready(function() {
   //doc ready begins
+
+  // $(function() {
+  //   $("#select-option").selectric();
+
+
   $("#select-option").on("change", function() {
     var selectedStory = $("#select-option").val();
 
