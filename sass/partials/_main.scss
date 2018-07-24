@@ -35,7 +35,10 @@ body {
   .label-menu {
     font-size: 13px;
     padding-bottom: 15px;
-    padding-right: 80px;
+
+    @include tablet-size {
+      padding-right: 80px;
+    }
   }
 }
 

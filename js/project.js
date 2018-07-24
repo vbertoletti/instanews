@@ -3,7 +3,6 @@ $(document).ready(function() {
 
   $("#select-option").selectric();
 
-
   $("#select-option").on("change", function() {
     var selectedStory = $("#select-option").val();
 
