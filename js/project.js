@@ -1,10 +1,10 @@
 $(document).ready(function() {
   //doc ready begins
 
-  $("#select-option").selectric();
+  $(".select-option").selectric();
 
-  $("#select-option").on("change", function() {
-    var selectedStory = $("#select-option").val();
+  $(".select-option").on("change", function() {
+    var selectedStory = $(".select-option").val();
 
     //var to avoid alerting .fail when empty option is selected from select menu
     var selectedStoryExists = false;
