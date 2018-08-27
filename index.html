@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Instanews - NYT News Reader</title>
+
+  <link href="./build/css/style.min.css" type="text/css" rel="stylesheet">
+
+</head>
+
+
+<body>
+  <!-- adding div to wrap the page body section -->
+  <div class="page-cntr">
+
+    <header class="header-wrapper">
+
+      <!-- div container for NYT logo -->
+      <div class="logo-container">
+        <img class="logo" src="images/nyt-logo.svg" alt="new-york-times-logo">
+      </div>
+
+      <!-- div container for choosing news subject -->
+      <div class="main-menu">
+        <label class="label-menu">Choose a section:</label>
+
+        <select class="select-option">
+          <option value="">sections...</option>
+          <option value="home">home</option>
+          <option value="arts">arts</option>
+          <option value="business">business</option>
+          <option value="sports">sports</option>
+          <option value="technology">technology</option>
+          <option value="fashion">fashion</option>
+        </select>
+      </div>
+
+      <!-- loader gif image -->
+      <img class="loader" src="images/ajax-loader.gif" alt="loader">
+
+    </header>
+
+    <!-- html entire news section, once news are selected from options menu -->
+    <section class="news-section">
+
+      <div id="appended-stories"></div>
+
+    </section>
+
+    <!-- footer section -->
+    <footer class="footer-container">
+
+      <p>&copy; Copyright 2016 INSTANEWS
+        <p>
+
+    </footer>
+  </div>
+  <!-- end of footer and entire page wrapper div -->
+
+  <!-- javaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/selectric@1.13.0/src/jquery.selectric.js"></script>
+  <script src="./build/js/project.min.js"></script>
+
+
+</body>
+
+</html>
