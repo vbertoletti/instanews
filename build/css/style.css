@@ -339,8 +339,7 @@ body {
   background-color: #000000;
   color: #ffffff;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  min-height: 100vh; }
+  font-size: 16px; }
 
 .page-cntr {
   display: -webkit-box;
@@ -410,17 +409,14 @@ body {
   color: #fff;
   text-align: left;
   text-transform: capitalize; }
-
-.header-wrapper .selectric-items li {
-  color: #ffffff; }
-
-.header-wrapper .selectric-items li:hover {
-  background: #17212a;
-  color: #dbdbdb; }
-
-.header-wrapper .selectric-items li.selected {
-  background: #17212a;
-  color: white; }
+  .header-wrapper .selectric-items li {
+    color: #ffffff; }
+    .header-wrapper .selectric-items li.selected {
+      background: #17212a;
+      color: white; }
+    .header-wrapper .selectric-items li:hover {
+      background: #17212a;
+      color: #dbdbdb; }
 
 @media screen and (min-width: 600px) {
   .header-wrapper {
@@ -509,7 +505,8 @@ body {
   color: #ffffff;
   padding: 10px;
   text-align: justify;
-  height: 100px; }
+  height: 100px;
+  overflow: hidden; }
   .abstract a:hover {
     height: 25%; }
 
