@@ -10,6 +10,10 @@
 
   <link href="./build/css/style.min.css" type="text/css" rel="stylesheet">
 
+    <!-- Console showing 404 error to load favicon. Found below answer, it solved the problem: 
+    https://stackoverflow.com/questions/31075893/im-getting-favicon-ico-error -->
+  <link rel="shortcut icon" href="#">
+
 </head>
 
 
@@ -39,23 +43,23 @@
         </select>
       </div>
 
-      <!-- loader gif image -->
-      <img class="loader" src="images/ajax-loader.gif" alt="loader">
-
     </header>
+
+      <!-- loader gif image -->
+
+      <div class="loader-container">
+        <img class="loader" src="images/ajax-loader.gif" alt="loader">
+      </div>
 
     <!-- html entire news section, once news are selected from options menu -->
     <section class="news-section">
-
-      <div id="appended-stories"></div>
 
     </section>
 
     <!-- footer section -->
     <footer class="footer-container">
 
-      <p>&copy; Copyright 2016 INSTANEWS
-        <p>
+      <p>&copy; Copyright 2016 INSTANEWS<p>
 
     </footer>
   </div>

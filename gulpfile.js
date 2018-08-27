@@ -1,14 +1,24 @@
-//modules you need:
-var gulp = require('gulp'),
-  uglify = require('gulp-uglify'),
-  browserSync = require('browser-sync').create(),
-  eslint = require('gulp-eslint'),
-  sass = require("gulp-sass"),
-  autoprefixer = require("gulp-autoprefixer"),
-  cssnano = require("gulp-cssnano"),
-  rename = require('gulp-rename'),
-  prettyError = require("gulp-prettyerror"),
-  babel = require("gulp-babel");
+const gulp = require('gulp');
+const prettyError = require('gulp-prettyerror');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const rename = require('gulp-rename');
+const cssnano = require('gulp-cssnano');
+const uglify = require('gulp-uglify');
+const eslint = require('gulp-eslint');
+const browserSync = require('browser-sync');
+
+
+  gulp.task("lint", function() {
+    return (gulp 
+      .src("./js/*.js")
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError() )
+        
+    );
+  });
+
 
   //babel task
   gulp.task(
@@ -44,16 +54,6 @@ var gulp = require('gulp'),
       .pipe(gulp.dest("./build/css"));
   });
 
-
-  gulp.task("lint", function() {
-    return (gulp 
-      .src("./js/*.js")
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError() )
-        
-    );
-  });
 
 
 gulp.task('scripts', gulp.series("lint", function(){

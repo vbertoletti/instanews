@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     //Check if select option has a value, if so run ajax request
     if (selectedStoryExists == true) {
-      $(".loader").show();
+      $(".loader-container").show();
 
       //actual ajax request
       $.ajax({
@@ -69,9 +69,9 @@ $(document).ready(function() {
           alert("Sorry, cannot retrieve data");
         })
 
-        //always hide the loader gif after showing it
+        // always hide the loader gif after showing it
         .always(function() {
-          $(".loader").hide();
+          $(".loader-container").hide();
         });
     }
   }); //#news-select change event end
