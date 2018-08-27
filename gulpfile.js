@@ -7,9 +7,27 @@ var gulp = require('gulp'),
   autoprefixer = require("gulp-autoprefixer"),
   cssnano = require("gulp-cssnano"),
   rename = require('gulp-rename'),
-  prettyError = require("gulp-prettyerror");
+  prettyError = require("gulp-prettyerror"),
+  babel = require("gulp-babel");
 
+  //babel task
+  gulp.task(
+    'scripts',
+    gulp.series('lint', function() {
+      return gulp
+        .src('./js/*.js')
+        .pipe(babel())
+        .pipe(uglify())
+        .pipe(
+          rename({
+            extname: '.min.js'
+          })
+        )
+        .pipe(gulp.dest('./build/js'));
+    })
+  );
 
+  
   gulp.task("sass", function() {
     return gulp
       .src("./sass/style.scss")
