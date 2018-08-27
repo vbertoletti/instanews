@@ -174,7 +174,7 @@ body {
   }
 
   .footer-container {
-    p {
+    span {
       padding: 15px 0 5px 0;
     }
   }
@@ -233,11 +233,13 @@ body {
 }
 
 .footer-container {
-  @include desktop-size {
-    padding-left: 3rem;
+  margin: 0 auto;
+
+  .footer-uppercase {
+    text-transform: uppercase;
   }
 
-  p {
+  span {
     position: relative;
     bottom: 0;
     width: 100%;
@@ -249,6 +251,11 @@ body {
       text-align: start;
       font-size: inherit;
     }
+  }
+
+  @include desktop-size {
+    padding-left: 3rem;
+    margin: 0;
   }
 }
 
