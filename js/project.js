@@ -25,7 +25,7 @@ $(document).ready(function() {
     url +=
       "?" +
       $.param({
-        "api-key": "ce812b641d764fcb9e91d0f15205783d"
+        "api-key": "HH3SMVMK50HvdYUDAuxv4FKK9r7Uv0qx"
       });
 
     //Check if select option has a value, if so run ajax request
